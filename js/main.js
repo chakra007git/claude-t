@@ -1,3 +1,45 @@
+// Mobile menu
+(function () {
+    const btn = document.getElementById('mobileMenuBtn');
+    const overlay = document.getElementById('mobileMenuOverlay');
+    const backdrop = document.getElementById('mobileMenuBackdrop');
+    const links = document.querySelectorAll('.mobile-menu-link');
+    const cta = document.querySelector('.mobile-menu-cta');
+
+    function openMenu() {
+        overlay.classList.add('is-open');
+        overlay.setAttribute('aria-hidden', 'false');
+        btn.setAttribute('aria-expanded', 'true');
+        btn.setAttribute('aria-label', 'Закрыть меню');
+        document.body.classList.add('mobile-menu-open');
+    }
+
+    function closeMenu() {
+        overlay.classList.remove('is-open');
+        overlay.setAttribute('aria-hidden', 'true');
+        btn.setAttribute('aria-expanded', 'false');
+        btn.setAttribute('aria-label', 'Открыть меню');
+        document.body.classList.remove('mobile-menu-open');
+    }
+
+    function toggleMenu() {
+        if (overlay.classList.contains('is-open')) closeMenu();
+        else openMenu();
+    }
+
+    if (btn && overlay) {
+        btn.addEventListener('click', toggleMenu);
+        backdrop.addEventListener('click', closeMenu);
+        links.forEach(function (link) {
+            link.addEventListener('click', closeMenu);
+        });
+        if (cta) cta.addEventListener('click', closeMenu);
+        document.addEventListener('keydown', function (e) {
+            if (e.key === 'Escape' && overlay.classList.contains('is-open')) closeMenu();
+        });
+    }
+})();
+
 // Theme toggle
 const toggle = document.getElementById('themeToggle');
 toggle.addEventListener('click', () => {

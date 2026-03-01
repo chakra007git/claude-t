@@ -37,6 +37,12 @@
                 <li><a href="#contact" class="hover:text-gray-900 dark:hover:text-white transition">Контакт</a></li>
             </ul>
             <div class="flex items-center gap-4">
+                <!-- Mobile menu button -->
+                <button class="mobile-menu-btn md:hidden relative w-11 h-11 flex items-center justify-center rounded-xl border border-gray-200 dark:border-gray-700 bg-transparent hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" id="mobileMenuBtn" aria-label="Открыть меню" aria-expanded="false">
+                    <span class="mobile-menu-line mobile-menu-line-top"></span>
+                    <span class="mobile-menu-line mobile-menu-line-mid"></span>
+                    <span class="mobile-menu-line mobile-menu-line-bot"></span>
+                </button>
                 <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
                     <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
                     <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -45,6 +51,23 @@
             </div>
         </nav>
     </header>
+
+    <!-- Mobile menu overlay -->
+    <div class="mobile-menu-overlay" id="mobileMenuOverlay" aria-hidden="true">
+        <div class="mobile-menu-backdrop" id="mobileMenuBackdrop"></div>
+        <nav class="mobile-menu-panel">
+            <div class="mobile-menu-content">
+                <ul class="mobile-menu-links">
+                    <li><a href="#about" class="mobile-menu-link">Обо мне</a></li>
+                    <li><a href="#services" class="mobile-menu-link">Услуги</a></li>
+                    <li><a href="#work" class="mobile-menu-link">Работы</a></li>
+                    <li><a href="#testimonials" class="mobile-menu-link">Отзывы</a></li>
+                    <li><a href="#contact" class="mobile-menu-link">Контакт</a></li>
+                </ul>
+                <a href="#contact" class="mobile-menu-cta">Связаться</a>
+            </div>
+        </nav>
+    </div>
 
     <!-- Hero -->
     <section class="min-h-screen flex items-center pt-20">
