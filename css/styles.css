@@ -1,0 +1,282 @@
+/* ===== Scroll animations ===== */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.reveal-left {
+    opacity: 0;
+    transform: translateX(-60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-right {
+    opacity: 0;
+    transform: translateX(60px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.reveal-scale {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal-scale.visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ===== Stagger children ===== */
+.stagger > * {
+    transition-delay: calc(var(--i, 0) * 0.12s);
+}
+
+/* ===== Hero entrance (index page) ===== */
+.hero-text > * {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: heroIn 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-text > *:nth-child(1) { animation-delay: 0.1s; }
+.hero-text > *:nth-child(2) { animation-delay: 0.25s; }
+.hero-text > *:nth-child(3) { animation-delay: 0.4s; }
+.hero-text > *:nth-child(4) { animation-delay: 0.55s; }
+
+.hero-image {
+    opacity: 0;
+    transform: scale(0.85) rotate(-2deg);
+    animation: heroImgIn 1s cubic-bezier(0.16, 1, 0.3, 1) 0.3s forwards;
+}
+
+@keyframes heroIn {
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes heroImgIn {
+    to { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* ===== Hero fade (project pages) ===== */
+.hero-fade {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.hero-fade:nth-child(1) { animation-delay: 0.1s; }
+.hero-fade:nth-child(2) { animation-delay: 0.25s; }
+.hero-fade:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes fadeUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== Counter animation ===== */
+.count-up {
+    display: inline-block;
+}
+
+/* ===== Theme toggle ===== */
+.theme-toggle {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    cursor: pointer;
+    padding: 0;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: #374151;
+    transition: background 0.2s, border-color 0.2s, color 0.2s;
+}
+.theme-toggle:hover {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+}
+.dark .theme-toggle {
+    border-color: #4b5563;
+    color: #e5e7eb;
+}
+.dark .theme-toggle:hover {
+    background: #374151;
+    border-color: #6b7280;
+}
+.theme-icon {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    transition: opacity 0.3s, transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.sun-icon {
+    opacity: 0;
+    transform: rotate(90deg) scale(0.5);
+}
+.moon-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.dark .sun-icon {
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
+}
+.dark .moon-icon {
+    opacity: 0;
+    transform: rotate(-90deg) scale(0.5);
+}
+
+/* ===== Testimonials Slider ===== */
+.testimonials-slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+}
+
+.testimonials-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: transform;
+}
+
+.testimonial-slide {
+    min-width: 100%;
+    flex-shrink: 0;
+    padding: 0 1rem;
+    box-sizing: border-box;
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 1.5rem;
+    padding: 3rem;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.06);
+    max-width: 48rem;
+    margin: 0 auto;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.dark .testimonial-card {
+    background: #1f2937;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+}
+
+/* Arrows */
+.testimonial-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.testimonial-arrow:hover {
+    background: #f3f4f6;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.dark .testimonial-arrow {
+    background: #374151;
+    border-color: #4b5563;
+    color: #d1d5db;
+}
+
+.dark .testimonial-arrow:hover {
+    background: #4b5563;
+}
+
+.testimonial-arrow-prev {
+    left: 0.5rem;
+}
+
+.testimonial-arrow-next {
+    right: 0.5rem;
+}
+
+/* Dots */
+.testimonial-dots {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+.testimonial-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s;
+    padding: 0;
+}
+
+.testimonial-dot.active {
+    background: #374151;
+    transform: scale(1.2);
+}
+
+.dark .testimonial-dot {
+    background: #4b5563;
+}
+
+.dark .testimonial-dot.active {
+    background: #e5e7eb;
+}
+
+@media (max-width: 768px) {
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+    }
+
+    .testimonial-arrow {
+        width: 36px;
+        height: 36px;
+    }
+
+    .testimonial-arrow-prev {
+        left: 0.25rem;
+    }
+
+    .testimonial-arrow-next {
+        right: 0.25rem;
+    }
+
+    .testimonial-slide {
+        padding: 0 0.5rem;
+    }
+}
+
+/* ===== Smooth body transition ===== */
+body, header, section, footer, div, p, h1, h2, h3, a, span {
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Freelancer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                },
+            },
+        }
+    </script>
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();</script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900 font-sans dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100 dark:bg-gray-950/80 dark:border-gray-800">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold tracking-tight">andrey.dev</a>
+            <ul class="hidden md:flex gap-8 text-sm font-medium text-gray-600 dark:text-gray-400">
+                <li><a href="#about" class="hover:text-gray-900 dark:hover:text-white transition">Обо мне</a></li>
+                <li><a href="#services" class="hover:text-gray-900 dark:hover:text-white transition">Услуги</a></li>
+                <li><a href="#work" class="hover:text-gray-900 dark:hover:text-white transition">Работы</a></li>
+                <li><a href="#testimonials" class="hover:text-gray-900 dark:hover:text-white transition">Отзывы</a></li>
+                <li><a href="#contact" class="hover:text-gray-900 dark:hover:text-white transition">Контакт</a></li>
+            </ul>
+            <div class="flex items-center gap-4">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="#contact" class="hidden md:inline-block px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 transition">Связаться</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="min-h-screen flex items-center pt-20">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+            <div class="hero-text">
+                <div class="inline-block px-4 py-1.5 bg-emerald-50 text-emerald-700 dark:bg-emerald-900/30 dark:text-emerald-400 text-sm font-medium rounded-full mb-6">Доступен для проектов</div>
+                <h1 class="text-5xl md:text-7xl font-bold leading-[1.1] tracking-tight mb-6">Создаю цифровые продукты</h1>
+                <p class="text-lg text-gray-500 dark:text-gray-400 leading-relaxed mb-8 max-w-md">Фрилансер-разработчик. Превращаю идеи в быстрые, красивые и функциональные веб-приложения.</p>
+                <div class="flex gap-4">
+                    <a href="#work" class="px-6 py-3 bg-gray-900 text-white font-medium rounded-full hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 transition">Смотреть работы</a>
+                    <a href="#contact" class="px-6 py-3 border border-gray-300 font-medium rounded-full hover:border-gray-900 dark:border-gray-600 dark:hover:border-white transition">Написать мне</a>
+                </div>
+            </div>
+            <div class="relative hero-image">
+                <img src="image/my.png" alt="Фото разработчика" class="aspect-square object-cover object-top rounded-3xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" class="py-32">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16 items-start">
+                <div class="reveal-left">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Обо мне</p>
+                    <h2 class="text-4xl font-bold tracking-tight mb-6">5+ лет опыта в веб-разработке</h2>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Специализируюсь на создании современных веб-приложений с фокусом на производительность, доступность и чистый код. Работаю с компаниями от стартапов до enterprise.</p>
+                </div>
+                <div class="grid grid-cols-2 gap-6 stagger">
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:0">
+                        <p class="text-3xl font-bold mb-1"><span class="count-up" data-target="50">0</span>+</p>
+                        <p class="text-sm text-gray-500">Проектов</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:1">
+                        <p class="text-3xl font-bold mb-1"><span class="count-up" data-target="30">0</span>+</p>
+                        <p class="text-sm text-gray-500">Клиентов</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:2">
+                        <p class="text-3xl font-bold mb-1"><span class="count-up" data-target="5">0</span>+</p>
+                        <p class="text-sm text-gray-500">Лет опыта</p>
+                    </div>
+                    <div class="p-6 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:3">
+                        <p class="text-3xl font-bold mb-1"><span class="count-up" data-target="100">0</span>%</p>
+                        <p class="text-sm text-gray-500">Довольных</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services -->
+    <section id="services" class="py-32 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Услуги</p>
+            <h2 class="text-4xl font-bold tracking-tight mb-16 reveal">Чем могу помочь</h2>
+            <div class="grid md:grid-cols-3 gap-8 stagger">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl hover:shadow-lg dark:hover:shadow-gray-900/50 transition-shadow reveal" style="--i:0">
+                    <div class="w-12 h-12 bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400 rounded-xl flex items-center justify-center text-xl mb-6">&#9672;</div>
+                    <h3 class="text-xl font-semibold mb-3">Веб-разработка</h3>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">SPA, лендинги, корпоративные сайты на React, Next.js, Vue. Адаптивная вёрстка и анимации.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl hover:shadow-lg dark:hover:shadow-gray-900/50 transition-shadow reveal" style="--i:1">
+                    <div class="w-12 h-12 bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center text-xl mb-6">&#9998;</div>
+                    <h3 class="text-xl font-semibold mb-3">UI/UX Дизайн</h3>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Проектирование интерфейсов в Figma. Прототипы, дизайн-системы и пользовательские исследования.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl hover:shadow-lg dark:hover:shadow-gray-900/50 transition-shadow reveal" style="--i:2">
+                    <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-xl mb-6">&#9881;</div>
+                    <h3 class="text-xl font-semibold mb-3">Backend & API</h3>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Node.js, Python, базы данных, REST и GraphQL API. Интеграции с внешними сервисами.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Work -->
+    <section id="work" class="py-32">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Работы</p>
+            <h2 class="text-4xl font-bold tracking-tight mb-16 reveal">Избранные проекты</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <a href="project-ecommerce.html" class="group cursor-pointer reveal block" style="--i:0">
+                    <div class="aspect-[4/3] rounded-2xl mb-5 overflow-hidden">
+                        <img src="image/ecommerce.jpg" alt="E-commerce platform" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">E-commerce платформа</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">React &middot; Node.js &middot; PostgreSQL</p>
+                </a>
+                <a href="project-dashboard.html" class="group cursor-pointer reveal block" style="--i:1">
+                    <div class="aspect-[4/3] rounded-2xl mb-5 overflow-hidden">
+                        <img src="image/dashboard.jpg" alt="SaaS Dashboard" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">SaaS Dashboard</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Next.js &middot; TypeScript &middot; Tailwind</p>
+                </a>
+                <a href="project-mobile.html" class="group cursor-pointer reveal block" style="--i:2">
+                    <div class="aspect-[4/3] rounded-2xl mb-5 overflow-hidden">
+                        <img src="image/mobileapp.jpg" alt="Mobile app" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Мобильное приложение</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">React Native &middot; Firebase</p>
+                </a>
+                <a href="project-portal.html" class="group cursor-pointer reveal block" style="--i:3">
+                    <div class="aspect-[4/3] rounded-2xl mb-5 overflow-hidden">
+                        <img src="image/corpportal.jpg" alt="Corporate portal" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <h3 class="text-xl font-semibold mb-1">Корпоративный портал</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">Vue.js &middot; Python &middot; Docker</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="py-32 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Отзывы</p>
+            <h2 class="text-4xl font-bold tracking-tight mb-16 reveal">Что говорят клиенты</h2>
+
+            <div class="testimonials-slider reveal-scale" id="testimonialsSlider">
+                <div class="testimonials-track" id="testimonialsTrack">
+                    <!-- Slide 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="w-10 h-10 text-gray-300 dark:text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                            <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-8">&laquo;Андрей полностью перестроил наш магазин. Скорость загрузки упала в 5 раз, конверсия выросла втрое. Лучшая инвестиция за год.&raquo;</blockquote>
+                            <div>
+                                <p class="font-semibold text-lg">Дмитрий Волков</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">CEO, ShopFlow Inc.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="w-10 h-10 text-gray-300 dark:text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                            <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-8">&laquo;Раньше мы тратили часы на сбор данных из разных источников. Теперь всё на одном экране, обновляется мгновенно. Это изменило нашу работу.&raquo;</blockquote>
+                            <div>
+                                <p class="font-semibold text-lg">Анна Соколова</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">CPO, Metrica Analytics</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="w-10 h-10 text-gray-300 dark:text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                            <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-8">&laquo;Мы получили приложение на обе платформы за бюджет одной. Качество анимаций — как у нативного. Пользователи в восторге.&raquo;</blockquote>
+                            <div>
+                                <p class="font-semibold text-lg">Игорь Петренко</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Founder, FitPulse Health</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 4 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="w-10 h-10 text-gray-300 dark:text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                            <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-8">&laquo;Мы отказались от 6 платных сервисов и получили единую систему, заточенную под наши процессы. Onboarding ускорился в 4 раза.&raquo;</blockquote>
+                            <div>
+                                <p class="font-semibold text-lg">Елена Маркова</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">CTO, TechCorp Group</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Slide 5 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <svg class="w-10 h-10 text-gray-300 dark:text-gray-600 mb-6" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                            <blockquote class="text-xl md:text-2xl font-medium leading-relaxed mb-8">&laquo;Профессиональный подход, чёткие сроки и внимание к деталям. Наш лендинг стал конвертировать в 2 раза лучше после редизайна.&raquo;</blockquote>
+                            <div>
+                                <p class="font-semibold text-lg">Максим Кузнецов</p>
+                                <p class="text-gray-500 dark:text-gray-400 text-sm">Marketing Director, BrandUp Agency</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Navigation arrows -->
+                <button class="testimonial-arrow testimonial-arrow-prev" id="testimonialPrev" aria-label="Предыдущий отзыв">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="testimonial-arrow testimonial-arrow-next" id="testimonialNext" aria-label="Следующий отзыв">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+
+                <!-- Dots -->
+                <div class="testimonial-dots" id="testimonialDots">
+                    <button class="testimonial-dot active" data-index="0" aria-label="Отзыв 1"></button>
+                    <button class="testimonial-dot" data-index="1" aria-label="Отзыв 2"></button>
+                    <button class="testimonial-dot" data-index="2" aria-label="Отзыв 3"></button>
+                    <button class="testimonial-dot" data-index="3" aria-label="Отзыв 4"></button>
+                    <button class="testimonial-dot" data-index="4" aria-label="Отзыв 5"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="py-32 bg-gray-900 dark:bg-gray-800 text-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Контакт</p>
+            <h2 class="text-4xl md:text-5xl font-bold tracking-tight mb-6 reveal">Есть проект? Давайте обсудим</h2>
+            <p class="text-gray-400 mb-10 max-w-lg mx-auto reveal">Напишите мне, и я отвечу в течение 24 часов. Первая консультация бесплатно.</p>
+            <a href="https://t.me/Avkxseo" target="_blank" class="inline-flex items-center gap-3 px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition text-lg reveal-scale"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/></svg>@Avkxseo</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-gray-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p>&copy; 2026 andrey.dev</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition">GitHub</a>
+                <a href="#" class="hover:text-white transition">Telegram</a>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce платформа — andrey.dev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { fontFamily: { sans: ['Inter', 'sans-serif'] } } }
+        }
+    </script>
+    <script>(function(){var t=localStorage.getItem('theme');if(t==='dark'||(!t&&window.matchMedia('(prefers-color-scheme:dark)').matches)){document.documentElement.classList.add('dark')}})();</script>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="bg-white text-gray-900 font-sans dark:bg-gray-950 dark:text-gray-100">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white/80 backdrop-blur-md z-50 border-b border-gray-100 dark:bg-gray-950/80 dark:border-gray-800">
+        <nav class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+            <a href="index.html" class="text-xl font-bold tracking-tight">andrey.dev</a>
+            <div class="flex items-center gap-4">
+                <button class="theme-toggle" id="themeToggle" aria-label="Переключить тему">
+                    <svg class="theme-icon sun-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+                    <svg class="theme-icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+                </button>
+                <a href="index.html#work" class="hidden md:inline-block px-5 py-2.5 bg-gray-900 text-white text-sm font-medium rounded-full hover:bg-gray-700 dark:bg-white dark:text-gray-900 dark:hover:bg-gray-200 transition">Все проекты</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="pt-28 pb-16">
+        <div class="max-w-6xl mx-auto px-6">
+            <a href="index.html#work" class="inline-flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition mb-8 hero-fade">
+                &larr; Назад к проектам
+            </a>
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight tracking-tight mb-4 hero-fade">ShopFlow — E-commerce платформа</h1>
+            <p class="text-xl text-gray-500 dark:text-gray-400 max-w-2xl hero-fade">Полноценный интернет-магазин с каталогом, корзиной, оплатой и панелью администратора. Разработан с нуля за 3 месяца.</p>
+        </div>
+    </section>
+
+    <!-- Cover Image -->
+    <section class="pb-20">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="rounded-3xl overflow-hidden reveal-scale">
+                <img src="image/shopflow-cover.jpg" alt="ShopFlow — главная страница" class="w-full h-auto object-cover">
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Info Grid -->
+    <section class="pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-4 gap-8 stagger">
+                <div class="reveal" style="--i:0">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">Клиент</p>
+                    <p class="text-lg font-medium">ShopFlow Inc.</p>
+                </div>
+                <div class="reveal" style="--i:1">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">Год</p>
+                    <p class="text-lg font-medium">2025</p>
+                </div>
+                <div class="reveal" style="--i:2">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">Роль</p>
+                    <p class="text-lg font-medium">Fullstack-разработчик</p>
+                </div>
+                <div class="reveal" style="--i:3">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-2">Стек</p>
+                    <p class="text-lg font-medium">React, Node.js, PostgreSQL</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="max-w-6xl mx-auto px-6"><hr class="border-gray-200 dark:border-gray-800"></div>
+
+    <!-- Challenge & Solution -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div class="reveal-left">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Задача</p>
+                    <h2 class="text-3xl font-bold tracking-tight mb-6">Заменить устаревшую платформу на быстрое современное решение</h2>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Клиент использовал монолитный PHP-магазин с медленной загрузкой, неудобной админкой и невозможностью масштабирования. Конверсия мобильных пользователей падала каждый квартал. Нужна была полная перестройка с нуля — от архитектуры до UI.</p>
+                </div>
+                <div class="reveal-right">
+                    <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4">Решение</p>
+                    <h2 class="text-3xl font-bold tracking-tight mb-6">SPA с серверным рендерингом и headless CMS</h2>
+                    <p class="text-gray-500 dark:text-gray-400 leading-relaxed">Разработал React-приложение с Next.js для SSR и оптимальной SEO-индексации. Backend — Node.js с Express и PostgreSQL. Интегрировал Stripe для платежей, Cloudinary для изображений и Redis для кэширования каталога. Админ-панель с real-time аналитикой.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots -->
+    <section class="pb-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Скриншоты</p>
+            <h2 class="text-3xl font-bold tracking-tight mb-12 reveal">Интерфейс платформы</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="rounded-2xl overflow-hidden reveal" style="--i:0">
+                    <img src="image/shopflow-catalog.jpg" alt="Каталог товаров" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden reveal" style="--i:1">
+                    <img src="image/shopflow-cart.jpg" alt="Корзина и оформление заказа" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden reveal" style="--i:2">
+                    <img src="image/shopflow-admin.jpg" alt="Панель администратора" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+                <div class="rounded-2xl overflow-hidden reveal" style="--i:3">
+                    <img src="image/shopflow-mobile.jpg" alt="Мобильная версия" class="w-full h-auto object-cover hover:scale-105 transition-transform duration-500">
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6 mt-6">
+                <p class="text-sm text-gray-400">Каталог товаров с фильтрами и поиском</p>
+                <p class="text-sm text-gray-400">Корзина и оформление заказа</p>
+                <p class="text-sm text-gray-400">Панель администратора с аналитикой</p>
+                <p class="text-sm text-gray-400">Мобильная адаптация</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Функционал</p>
+            <h2 class="text-3xl font-bold tracking-tight mb-12 reveal">Ключевые возможности</h2>
+            <div class="grid md:grid-cols-3 gap-8 stagger">
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:0">
+                    <div class="w-12 h-12 bg-violet-100 dark:bg-violet-900/40 text-violet-600 dark:text-violet-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9733;</div>
+                    <h3 class="text-lg font-semibold mb-2">Умный каталог</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Мгновенный поиск с Elasticsearch, фильтры по категориям, ценам, рейтингу. Бесконечный скролл и lazy-загрузка изображений.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:1">
+                    <div class="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/40 text-emerald-600 dark:text-emerald-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9889;</div>
+                    <h3 class="text-lg font-semibold mb-2">Быстрая оплата</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Интеграция Stripe с поддержкой Apple Pay, Google Pay и карт. Оформление заказа за 30 секунд без регистрации.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:2">
+                    <div class="w-12 h-12 bg-pink-100 dark:bg-pink-900/40 text-pink-600 dark:text-pink-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9776;</div>
+                    <h3 class="text-lg font-semibold mb-2">Админ-панель</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Dashboard с графиками продаж, управление товарами, заказами и пользователями. Экспорт отчётов в CSV и PDF.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:3">
+                    <div class="w-12 h-12 bg-amber-100 dark:bg-amber-900/40 text-amber-600 dark:text-amber-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9742;</div>
+                    <h3 class="text-lg font-semibold mb-2">Уведомления</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Email и push-уведомления о статусе заказа. Интеграция с Telegram-ботом для мгновенных оповещений менеджера.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:4">
+                    <div class="w-12 h-12 bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9729;</div>
+                    <h3 class="text-lg font-semibold mb-2">Облачная инфраструктура</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">Деплой на AWS с автоскейлингом. Docker-контейнеры, CI/CD через GitHub Actions, мониторинг через Grafana.</p>
+                </div>
+                <div class="bg-white dark:bg-gray-800 p-8 rounded-2xl reveal" style="--i:5">
+                    <div class="w-12 h-12 bg-rose-100 dark:bg-rose-900/40 text-rose-600 dark:text-rose-400 rounded-xl flex items-center justify-center text-2xl mb-5">&#9851;</div>
+                    <h3 class="text-lg font-semibold mb-2">SEO и производительность</h3>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">SSR через Next.js для индексации, Lighthouse 95+, Core Web Vitals в зелёной зоне. Sitemap и structured data.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Результаты</p>
+            <h2 class="text-3xl font-bold tracking-tight mb-12 reveal">Что получил клиент</h2>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 stagger">
+                <div class="text-center p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:0">
+                    <p class="text-4xl md:text-5xl font-bold text-violet-600 dark:text-violet-400 mb-2">3x</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Рост конверсии</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:1">
+                    <p class="text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 mb-2">0.8s</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Время загрузки</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:2">
+                    <p class="text-4xl md:text-5xl font-bold text-pink-600 dark:text-pink-400 mb-2">50K+</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Товаров в каталоге</p>
+                </div>
+                <div class="text-center p-8 bg-gray-50 dark:bg-gray-800 rounded-2xl reveal-scale" style="--i:3">
+                    <p class="text-4xl md:text-5xl font-bold text-amber-600 dark:text-amber-400 mb-2">99.9%</p>
+                    <p class="text-sm text-gray-500 dark:text-gray-400">Uptime</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack -->
+    <section class="py-24 bg-gray-50 dark:bg-gray-900">
+        <div class="max-w-6xl mx-auto px-6">
+            <p class="text-sm font-semibold text-gray-400 uppercase tracking-widest mb-4 reveal">Технологии</p>
+            <h2 class="text-3xl font-bold tracking-tight mb-12 reveal">Стек проекта</h2>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="reveal-left">
+                    <h3 class="text-lg font-semibold mb-4">Frontend</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">React 18</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Next.js 14</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">TypeScript</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Tailwind CSS</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Zustand</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Framer Motion</span>
+                    </div>
+                </div>
+                <div class="reveal-right">
+                    <h3 class="text-lg font-semibold mb-4">Backend & Infra</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Node.js</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Express</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">PostgreSQL</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Redis</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Elasticsearch</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Docker</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">AWS</span>
+                        <span class="px-4 py-2 bg-white dark:bg-gray-800 rounded-full text-sm font-medium">Stripe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+    <section class="py-24">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="max-w-3xl mx-auto text-center reveal-scale">
+                <svg class="w-12 h-12 text-gray-300 dark:text-gray-600 mx-auto mb-8" fill="currentColor" viewBox="0 0 24 24"><path d="M4.583 17.321C3.553 16.227 3 15 3 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179zm10 0C13.553 16.227 13 15 13 13.011c0-3.5 2.457-6.637 6.03-8.188l.893 1.378c-3.335 1.804-3.987 4.145-4.247 5.621.537-.278 1.24-.375 1.929-.311 1.804.167 3.226 1.648 3.226 3.489a3.5 3.5 0 01-3.5 3.5c-1.073 0-2.099-.49-2.748-1.179z"/></svg>
+                <blockquote class="text-2xl md:text-3xl font-medium leading-relaxed mb-8">&laquo;Андрей полностью перестроил наш магазин. Скорость загрузки упала в 5 раз, конверсия выросла втрое. Лучшая инвестиция за год.&raquo;</blockquote>
+                <div>
+                    <p class="font-semibold text-lg">Дмитрий Волков</p>
+                    <p class="text-gray-500 dark:text-gray-400 text-sm">CEO, ShopFlow Inc.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-24 bg-gray-900 dark:bg-gray-800 text-white">
+        <div class="max-w-6xl mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold tracking-tight mb-4 reveal">Хотите такой же проект?</h2>
+            <p class="text-gray-400 mb-8 max-w-md mx-auto reveal">Напишите мне, обсудим вашу задачу и подберём оптимальное решение.</p>
+            <div class="flex justify-center gap-4 reveal">
+                <a href="index.html#contact" class="px-8 py-4 bg-white text-gray-900 font-semibold rounded-full hover:bg-gray-100 transition text-lg">Обсудить проект</a>
+                <a href="index.html#work" class="px-8 py-4 border border-gray-600 text-white font-medium rounded-full hover:border-white transition text-lg">Другие работы</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-gray-800 dark:border-gray-700 bg-gray-900 dark:bg-gray-800 text-gray-500">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p>&copy; 2026 andrey.dev</p>
+            <div class="flex gap-6">
+                <a href="#" class="hover:text-white transition">GitHub</a>
+                <a href="#" class="hover:text-white transition">Telegram</a>
+                <a href="#" class="hover:text-white transition">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+
+</body>
+</html>

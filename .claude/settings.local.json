@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(start \"\" \"C:/claude-t/index.html\")",
+      "WebSearch",
+      "Bash(ls -la C:/claude-t/image/*.jpg)",
+      "Bash(start firefox:*)",
+      "Bash(curl:*)",
+      "Bash(file:*)"
+    ]
+  }
+}
